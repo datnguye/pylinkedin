@@ -18,16 +18,28 @@ def crawl(profile_id=None, li_at_cookie=None, headless=True, debug=False):
         return None
 
     obj = {}
+    url = f'https://www.linkedin.com/in/{profile_id}/'
+    # url = 'https://www.linkedin.com/search/results/people/?keywords=database&origin=GLOBAL_SEARCH_HEADER'
     
     # Open Chrome & get to target
     if debug: print(f'[PYLINKEDIN] Open new instance - Chrome')
     driver = chrome.get_instance(headless=headless)
     if debug: print(f'[PYLINKEDIN] Get to target page')
-    driver.get(f'https://www.linkedin.com/in/{profile_id}/')
+    driver.get(url)
     if debug: print(f'[PYLINKEDIN] Adding cookie')
     driver = add_cookie(driver, li_at_cookie)
+    driver.get(url) # have to refresh to apply cookie
 
-    # 
+    # Browse the page
+    if debug: print(f'[PYLINKEDIN] Browsing the page')
+    chrome.browse(driver=driver, element_id='profile-nav-item')
+
+    # Browse the page
+    if debug: print(f'[PYLINKEDIN] Get page source')
+    page_source = chrome.get_page_source(driver=driver)
+    print(page_source)
+
+    # to be continued....
 
     # Result
     return obj
