@@ -27,7 +27,7 @@ def crawl(profile_id=None, li_at_cookie=None, headless=True, debug=False):
     if debug: print(f'[PYLINKEDIN] Adding cookie')
     driver = add_cookie(driver, li_at_cookie)
 
-    
+    # 
 
     # Result
     return obj
