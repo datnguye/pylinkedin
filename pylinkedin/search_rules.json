@@ -1,8 +1,7 @@
 {
-    "company":{
-       "url_placeholder":"https://www.linkedin.com/xxx/{}/"
-    },
     "profil":{
-       "url_placeholder":"https://www.linkedin.com/xxx/{}/"
+       "url_placeholder":"https://www.linkedin.com/search/results/people/?keywords={}",
+       "url_profile_base":"https://www.linkedin.com/in/",
+       "xpath_profiles": "(//*[@data-test-search-result='PROFILE'])//div[1]/a"
     }
 }

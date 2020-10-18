@@ -88,7 +88,7 @@ def extract_soup(soup, fields_to_extract):
 
     return out
 
-def crawl(profile_id=None, profile_type='profil', li_at_cookie=None, headless=True, debug=False):
+def crawl(driver=None, profile_id=None, profile_type='profil', li_at_cookie=None, headless=True, debug=False):
     """ profile_type = 'profil' or 'company'"""
     if profile_id is None:
         if debug: print(f'Profile ID is required')
@@ -104,7 +104,8 @@ def crawl(profile_id=None, profile_type='profil', li_at_cookie=None, headless=Tr
     
     # Open Chrome & get to target
     if debug: print(f'[PYLINKEDIN] Open new instance - Chrome')
-    driver = chrome.get_instance(headless=headless)
+    if driver is None:
+        driver = chrome.get_instance(headless=headless)
     if debug: print(f'[PYLINKEDIN] Get to target page: {url}')
     driver.get(url)
     if debug: print(f'[PYLINKEDIN] Adding cookie')
