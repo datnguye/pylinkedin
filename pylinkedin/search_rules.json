@@ -1,0 +1,8 @@
+{
+    "company":{
+       "url_placeholder":"https://www.linkedin.com/xxx/{}/"
+    },
+    "profil":{
+       "url_placeholder":"https://www.linkedin.com/xxx/{}/"
+    }
+}
