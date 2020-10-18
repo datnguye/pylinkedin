@@ -67,9 +67,7 @@ def extract_soup(soup, fields_to_extract):
                                     out[rule_key.rsplit('.', 1)[1]] = temp
 
                         if '$recipeTypes' in sub_dataset:
-
                             for rtype in sub_dataset['$recipeTypes']:
-
                                 if rtype == rule_key:
                                     temp = dict()
                                     for field in rule['fields']:
@@ -126,5 +124,9 @@ def crawl(profile_id=None, profile_type='profil', li_at_cookie=None, headless=Tr
     soup = BeautifulSoup(page_source, 'html.parser')
     rules = obj[profile_type]['extract_rules']
     result = extract_soup(soup=soup, fields_to_extract=rules)
-    
-    return result
+
+    result['profile_id'] = profile_id
+    result['profile_type'] = profile_type
+
+    result = json.dumps(result).replace('$', '')
+    return [json.loads(result)]
