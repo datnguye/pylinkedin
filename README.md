@@ -19,5 +19,11 @@ pip install -r requirements.txt
 
 Create dotenv file as below template:
 ```
-BASE_URL=xxx
+PID=tuiladat
+PTYPE=profil
+LIAT=your_li_at_cookie
+
+MONGODB_URL=your_mongodb_url
+MONGODB_DB_NAME=linkedin
+MONGODB_COLLECTION_NAME=raw_data
 ```
