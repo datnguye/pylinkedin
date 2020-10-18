@@ -66,6 +66,6 @@ def crawl(keyword=None, profile_type='profil', li_at_cookie=None, headless=True,
     if debug: print(f'[PYLINKEDIN] Loop the list and crawl data')
     for pid in profiles:
         pdata = profile.crawl(driver=driver,profile_id=pid, profile_type=profile_type, li_at_cookie=li_at_cookie, headless=headless, debug=debug)
-        data.append(pdata)
+        data.append(pdata[0])
 
     return data
