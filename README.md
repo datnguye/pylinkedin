@@ -41,10 +41,10 @@ MONGODB_COLLECTION_NAME=raw_data
 
 
 ###### In aboves,
-####### KEY_WORD: This is the keyword to be based on to have list of target IDs, then to crawl multiple ones
-####### PID: This is LinkedIn ID of target profile
-####### PTYPE: Profile type whether it's Person (profil) or Company (company)
-####### LIAT: This is the cookie used to bypass authentication
-####### MONGODB_URL: Mongo DB URI, please see references via https://docs.mongodb.com/manual/reference/connection-string/
-####### MONGODB_DB_NAME: Mongo DB name
-####### MONGODB_COLLECTION_NAME: Collection name
+** KEY_WORD: This is the keyword to be based on to have list of target IDs, then to crawl multiple ones
+** PID: This is LinkedIn ID of target profile
+** PTYPE: Profile type whether it's Person (profil) or Company (company)
+** LIAT: This is the cookie used to bypass authentication
+** MONGODB_URL: Mongo DB URI, please see references via https://docs.mongodb.com/manual/reference/connection-string/
+** MONGODB_DB_NAME: Mongo DB name
+** MONGODB_COLLECTION_NAME: Collection name
